@@ -11,3 +11,6 @@ library(gt)
 library(janitor)
 library(readxl)
 
+Problem 1. Personal Data
+
+I could calculate the mean caffeine consumed (mg) to compare how much caffeine is consumed between days with 0, 1, and 2 classes. Since I feel like I get more work done on days without classes and I have less commitments to prevent me from preparing or buying a caffeinated drink, it would make sense to compare means. 
