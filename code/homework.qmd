@@ -1,0 +1,13 @@
+---
+title: "homework"
+format: html
+---
+
+https://github.com/kai-s-suzuki/ENVS-193DS_homework-03
+
+library(tidyverse)
+library(here)
+library(gt)
+library(janitor)
+library(readxl)
+
