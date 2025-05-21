@@ -12,7 +12,7 @@ library(janitor)
 library(readxl)
 mydata <- read_csv("data/ENVS-193DS_caffeine_hw2.csv")
 
-Problem 1. Personal Data
+# Problem 1. Personal Data
 
 ## a. 
 
@@ -48,10 +48,38 @@ ggplot(data = mydata_clean, # using the clean dataset
 
 ```{r}
 mydata_summary <- mydata_clean |> # starting with the clean data frame
-  group_by(Classes) |> # analyzing by number of classes
-  summarize(mean = mean(caffeine_mg), # calculating three means
-            var = var(caffeine_mg), # calculating three variances
-            n = length(caffeine_mg)) # calculating three counts
+group_by(Classes) |> # grouping by Classes
+  summarize(mean = mean(caffeine_mg), # calculating the mean
+            n = length(caffeine_mg), # counting the number of observations
+            df = n - 1, # calculating the degrees of freedom
+            sd = sd(caffeine_mg), # calculating the sd 
+            se = sd/sqrt(n), # calculating the se
+            tval = qt(p = 0.05/2, df = df, lower.tail = FALSE), # calculating the t-value
+            ci_lower = mean - tval*se, # calculate the lower bound of the 95% CI
+            ci_higher = mean + tval*se # calculate the upper bound of the 95% CI) 
+            )
 mydata_summary # displaying the data table
 ```
 
+## c. 
+
+Caption: Caffeine consumption in mg is displayed by the number of classes attended each day. Days with zero classes had the highest mean caffeine consumption of about 102.1, while days with 1 or 2 classes had lower means of 60.0 and 58.6, respectively. 
+
+## d. 
+```{r}
+gt(mydata_summary)
+mydata_summary |> # starting with the mydata_summary data frame
+  select(Classes, mean, sd, se, ci_lower, ci_higher) |> # selecting only Classes, mean, sd, se, ci_lower, and ci_higher to be displayed
+  gt() |> # using gt to make a table
+  gt::cols_label("ci_lower" = "Lower Bound", # relabeling ci_lower to say Lower Bound
+                 "ci_higher" = "Upper Bound", # relabeling ci_higher to say Upper Bound
+                 "mean" = "Mean", # relabeling mean to say Mean
+                 "sd" = "Standard Deviation", # relabeling sd to say Standard Deviation
+                 "se" = "Standard Error") |> # relabeling se to say Standard Error
+  fmt_number( # formatting numbers
+    columns = everything(), # applying to all columns
+    decimals = 1) # rounding to one decimal place
+```
+
+
+# Problem 2. 
