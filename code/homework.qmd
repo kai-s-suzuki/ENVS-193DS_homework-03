@@ -46,3 +46,12 @@ ggplot(data = mydata_clean, # using the clean dataset
    scale_shape_manual(values = c("0" = 17, "1" = 18, "2" = 19)) # making data points different shapes
 ```
 
+```{r}
+mydata_summary <- mydata_clean |> # starting with the clean data frame
+  group_by(Classes) |> # analyzing by number of classes
+  summarize(mean = mean(caffeine_mg), # calculating three means
+            var = var(caffeine_mg), # calculating three variances
+            n = length(caffeine_mg)) # calculating three counts
+mydata_summary # displaying the data table
+```
+
