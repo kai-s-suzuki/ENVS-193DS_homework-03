@@ -5,12 +5,16 @@ format: html
 
 https://github.com/kai-s-suzuki/ENVS-193DS_homework-03
 
+```{r setup, message=FALSE}
 library(tidyverse)
 library(here)
 library(gt)
 library(janitor)
 library(readxl)
-mydata <- read_csv("data/ENVS-193DS_caffeine_hw2.csv")
+library(dplyr)
+mydata <- read_csv("../data/ENVS-193DS_caffeine_hw2.csv")
+```
+
 
 # Problem 1. Personal Data
 
@@ -67,7 +71,6 @@ Caption: Caffeine consumption in mg is displayed by the number of classes attend
 
 ## d. 
 ```{r}
-gt(mydata_summary)
 mydata_summary |> # starting with the mydata_summary data frame
   select(Classes, mean, sd, se, ci_lower, ci_higher) |> # selecting only Classes, mean, sd, se, ci_lower, and ci_higher to be displayed
   gt() |> # using gt to make a table
