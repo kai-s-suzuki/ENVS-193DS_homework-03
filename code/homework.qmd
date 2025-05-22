@@ -97,3 +97,7 @@ The paper I chose for my critique uses a linear model, with nest abundance as th
 ## b.
 
 The x- and y-axes are in logical positions, as time should be on the x-axis and the response variable to time should be on the y-axis. They display underlying data, showing the raw data on the graph and overlaying the line and confidence intervals. 'Simple' statistics, like means and standard errors, are not displayed, possibly due to their use of the global linear model and the natural log of nesting sites, rather than the raw number. 
+
+## c. 
+
+The authors handled visual clutter well. They removed grid lines, chose a different color for the line, and made the axes labels clear and legible. 'Year' and 'Ln(Nests)' are bolded to draw attention to the timeframes, which are not the same for all four figures, and to the values, which have different scales. 
