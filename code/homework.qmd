@@ -101,3 +101,8 @@ The x- and y-axes are in logical positions, as time should be on the x-axis and 
 ## c. 
 
 The authors handled visual clutter well. They removed grid lines, chose a different color for the line, and made the axes labels clear and legible. 'Year' and 'Ln(Nests)' are bolded to draw attention to the timeframes, which are not the same for all four figures, and to the values, which have different scales. 
+
+## d.
+
+To improve this figure, adding the r-values that indicate the degree of nesting trends could be useful. While it appears that 'Bluff' and 'Larga' have falling trends, and 'Soropta' has a rising trend, it might be useful in certain situations to see statistics quickly without further reading. This is especially apparent when the natural log may distort the true change in nests. 
+Another improvement could be to include the overarching trend in each figure. By overlaying the aggregate of the four Panamanian beaches, the trend for each individual beach can be compared with the others. Adding all four models onto one graph would not be ideal, as this would be too much visual clutter. 
