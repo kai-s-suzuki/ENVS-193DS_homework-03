@@ -15,15 +15,15 @@ library(dplyr)
 mydata <- read_csv("../data/ENVS-193DS_caffeine_hw2.csv")
 ```
 
-
 # Problem 1. Personal Data
 
-## a. 
+## a.
 
-I could calculate the mean caffeine consumed (mg) each day to compare how much caffeine is consumed between days with 0, 1, and 2 classes. Since I feel like I get more work done on days without classes and I have less commitments to prevent me from preparing or buying a caffeinated drink, it would make sense to compare means. 
+I could calculate the mean caffeine consumed (mg) each day to compare how much caffeine is consumed between days with 0, 1, and 2 classes. Since I feel like I get more work done on days without classes and I have less commitments to prevent me from preparing or buying a caffeinated drink, it would make sense to compare means.
 
 ## b.
-```{r} 
+
+```{r}
 # data wrangling
 mydata_clean <- mydata |> # start mydata dataset
   filter(Classes %in% c("0", "1", "2")) |> # filter for 0, 1, or 2 classes
@@ -65,11 +65,12 @@ group_by(Classes) |> # grouping by Classes
 mydata_summary # displaying the data table
 ```
 
-## c. 
+## c.
 
-Caption: Caffeine consumption in mg is displayed by the number of classes attended each day. Days with zero classes had the highest mean caffeine consumption of about 102.1, while days with 1 or 2 classes had lower means of 60.0 and 58.6, respectively. 
+Caption: Caffeine consumption in mg is displayed by the number of classes attended each day. Days with zero classes had the highest mean caffeine consumption of about 102.1, while days with 1 or 2 classes had lower means of 60.0 and 58.6, respectively.
 
-## d. 
+## d.
+
 ```{r}
 mydata_summary |> # starting with the mydata_summary data frame
   select(Classes, mean, sd, se, ci_lower, ci_higher) |> # selecting only Classes, mean, sd, se, ci_lower, and ci_higher to be displayed
@@ -84,15 +85,15 @@ mydata_summary |> # starting with the mydata_summary data frame
     decimals = 1) # rounding to one decimal place
 ```
 
+# Problem 2.
 
-# Problem 2. 
+# Problem 3.
 
+## a.
 
-# Problem 3. 
+The paper I chose for my critique uses a linear model, with nest abundance as the response variable and year as the predictor variable. 
+![Leatherback nesting model](https://ars.els-cdn.com/content/image/1-s2.0-S2351989425000162-gr4_lrg.jpg)
 
-## a. 
-The paper I chose for my critique uses a linear model, with nest abundance as the response variable
-and year as the predictor variable. 
-![Linear model of leatherback turtle nesting data](turtlelinearmodel.jpg)
+## b.
 
-## b. 
+The x- and y-axes are in logical positions, as time should be on the x-axis and the response variable to time should be on the y-axis. They display underlying data, showing the raw data on the graph and overlaying the line and confidence intervals. 'Simple' statistics, like means and standard errors, are not displayed, possibly due to their use of the global linear model and the natural log of nesting sites, rather than the raw number. 
