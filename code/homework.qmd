@@ -86,3 +86,13 @@ mydata_summary |> # starting with the mydata_summary data frame
 
 
 # Problem 2. 
+
+
+# Problem 3. 
+
+## a. 
+The paper I chose for my critique uses a linear model, with nest abundance as the response variable
+and year as the predictor variable. 
+![Linear model of leatherback turtle nesting data](turtlelinearmodel.jpg)
+
+## b. 
