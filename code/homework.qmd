@@ -92,38 +92,41 @@ mydata_summary |> # starting with the mydata_summary data frame
 # Problem 2.
 
 ## a.
-An affective visualization for my personal data would likely include the psychological effects of caffeine, such as the energy rush and crash. It might also incorporate how days with more classes can be busier and hectic. Caffeine can definitely affect our emotions, and that should be the main component of an affective art piece. 
+
+An affective visualization for my personal data would likely include the psychological effects of caffeine, such as the energy rush and crash. It might also incorporate how days with more classes can be busier and hectic. Caffeine can definitely affect our emotions, and that should be the main component of an affective art piece.
 
 ## b.
+
 ![Sketch of affective visualization](../images/sketchHW3.jpg)
+
 ## c.
+
 ![Sketch of affective visualization](../images/draftHW3.jpg)
 
-## d. 
+## d.
+
 I am showing the psychological effects of caffeine. For example, the areas that are higher in the image--the area representing higher caffeine consumption--has space filled efficiently and quickly.
 
-I love how watercolor looks when representing natural landscapes and colors. My former internship supervisor, Kelly Hildner, makes watercolor paintings that use earthy tones. 
+I love how watercolor looks when representing natural landscapes and colors. My former internship supervisor, Kelly Hildner, makes watercolor paintings that use earthy tones.
 
-This piece was made with natural pigments (instant coffee, matcha powder, black tea) concentrated in water. 
+This piece was made with natural pigments (instant coffee, matcha powder, black tea) concentrated in water.
 
-A sketch of the art was made with conceptual ideas before the draft. The original data visualization serves as a base where the increasing y-axis was reflected in the art. 
+A sketch of the art was made with conceptual ideas before the draft. The original data visualization serves as a base where the increasing y-axis was reflected in the art.
 
 # Problem 3.
 
 ## a.
 
-The paper I chose for my critique uses a linear model, with nest abundance as the response variable and year as the predictor variable. 
-![Leatherback nesting model](https://ars.els-cdn.com/content/image/1-s2.0-S2351989425000162-gr4_lrg.jpg)
+The paper I chose for my critique uses a linear model, with nest abundance as the response variable and year as the predictor variable. ![Leatherback nesting model](https://ars.els-cdn.com/content/image/1-s2.0-S2351989425000162-gr4_lrg.jpg)
 
 ## b.
 
-The x- and y-axes are in logical positions, as time should be on the x-axis and the response variable to time should be on the y-axis. They display underlying data, showing the raw data on the graph and overlaying the line and confidence intervals. 'Simple' statistics, like means and standard errors, are not displayed, possibly due to their use of the global linear model and the natural log of nesting sites, rather than the raw number. 
+The x- and y-axes are in logical positions, as time should be on the x-axis and the response variable to time should be on the y-axis. They display underlying data, showing the raw data on the graph and overlaying the line and confidence intervals. 'Simple' statistics, like means and standard errors, are not displayed, possibly due to their use of the global linear model and the natural log of nesting sites, rather than the raw number.
 
-## c. 
+## c.
 
-The authors handled visual clutter well. They removed grid lines, chose a different color for the line, and made the axes labels clear and legible. 'Year' and 'Ln(Nests)' are bolded to draw attention to the timeframes, which are not the same for all four figures, and to the values, which have different scales. 
+The authors handled visual clutter well. They removed grid lines, chose a different color for the line, and made the axes labels clear and legible. 'Year' and 'Ln(Nests)' are bolded to draw attention to the timeframes, which are not the same for all four figures, and to the values, which have different scales.
 
 ## d.
 
-To improve this figure, adding the r-values that indicate the degree of nesting trends could be useful. While it appears that 'Bluff' and 'Larga' have falling trends, and 'Soropta' has a rising trend, it might be useful in certain situations to see statistics quickly without further reading. This is especially apparent when the natural log may distort the true change in nests. 
-Another improvement could be to include the overarching trend in each figure. By overlaying the aggregate of the four Panamanian beaches, the trend for each individual beach can be compared with the others. Adding all four models onto one graph would not be ideal, as this would be too much visual clutter. 
+To improve this figure, adding the r-values that indicate the degree of nesting trends could be useful. While it appears that 'Bluff' and 'Larga' have falling trends, and 'Soropta' has a rising trend, it might be useful in certain situations to see statistics quickly without further reading. This is especially apparent when the natural log may distort the true change in nests. Another improvement could be to include the overarching trend in each figure. By overlaying the aggregate of the four Panamanian beaches, the trend for each individual beach can be compared with the others. Adding all four models onto one graph would not be ideal, as this would be too much visual clutter.
