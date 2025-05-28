@@ -128,16 +128,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Classes, <span class="co"># setting x axis as classes</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> caffeine_mg, <span class="co"># setting y axis as caffeine in mg</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> Classes, <span class="co"># coloring by classes, so 0/1/2 have their own colors</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">shape =</span> Classes)) <span class="sc">+</span> <span class="co"># making sure 0/1/2 have their own shapes</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="co"># making boxplots</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="dv">0</span>, <span class="co"># making sure the points don't move vertically</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span> <span class="co"># limiting how much the points move horizontally</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Caffeine (mg)"</span>) <span class="sc">+</span> <span class="co"># relabeling the y-axis</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_get</span>() <span class="sc">+</span> <span class="co"># changing the theme</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"0"</span> <span class="ot">=</span> <span class="st">"darkgreen"</span>, <span class="co"># manually coloring 0, 1, and 2</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"tan3"</span>,</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"chocolate4"</span>)) <span class="sc">+</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"0"</span> <span class="ot">=</span> <span class="dv">17</span>, <span class="st">"1"</span> <span class="ot">=</span> <span class="dv">18</span>, <span class="st">"2"</span> <span class="ot">=</span> <span class="dv">19</span>)) <span class="co"># making data points different shapes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">shape =</span> Classes, <span class="co"># making sure 0/1/2 have their own shapes</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> Classes)) <span class="sc">+</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="co"># making boxplots</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="dv">0</span>, <span class="co"># making sure the points don't move vertically</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span> <span class="co"># limiting how much the points move horizontally</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Caffeine (mg)"</span>) <span class="sc">+</span> <span class="co"># relabeling the y-axis</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_get</span>() <span class="sc">+</span> <span class="co"># changing the theme</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"0"</span> <span class="ot">=</span> <span class="st">"darkgreen"</span>, <span class="co"># manually coloring 0, 1, and 2</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"tan3"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"chocolate4"</span>)) <span class="sc">+</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"0"</span> <span class="ot">=</span> <span class="dv">17</span>, <span class="st">"1"</span> <span class="ot">=</span> <span class="dv">18</span>, <span class="st">"2"</span> <span class="ot">=</span> <span class="dv">19</span>)) <span class="sc">+</span> <span class="co"># making data points different shapes</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"0"</span> <span class="ot">=</span> <span class="st">"#99b99d"</span>, </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"#e9c76b"</span>, </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"#c2a47e"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -188,23 +192,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">everything</span>(), <span class="co"># applying to all columns</span></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span>) <span class="co"># rounding to one decimal place</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="iershdfpfb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iershdfpfb table {
+<div id="jwjmlrvreo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jwjmlrvreo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iershdfpfb thead, #iershdfpfb tbody, #iershdfpfb tfoot, #iershdfpfb tr, #iershdfpfb td, #iershdfpfb th {
+#jwjmlrvreo thead, #jwjmlrvreo tbody, #jwjmlrvreo tfoot, #jwjmlrvreo tr, #jwjmlrvreo td, #jwjmlrvreo th {
   border-style: none;
 }
 
-#iershdfpfb p {
+#jwjmlrvreo p {
   margin: 0;
   padding: 0;
 }
 
-#iershdfpfb .gt_table {
+#jwjmlrvreo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -230,12 +234,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#iershdfpfb .gt_caption {
+#jwjmlrvreo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iershdfpfb .gt_title {
+#jwjmlrvreo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -247,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#iershdfpfb .gt_subtitle {
+#jwjmlrvreo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -259,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#iershdfpfb .gt_heading {
+#jwjmlrvreo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -271,13 +275,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iershdfpfb .gt_bottom_border {
+#jwjmlrvreo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iershdfpfb .gt_col_headings {
+#jwjmlrvreo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -292,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iershdfpfb .gt_col_heading {
+#jwjmlrvreo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -312,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#iershdfpfb .gt_column_spanner_outer {
+#jwjmlrvreo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -324,15 +328,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#iershdfpfb .gt_column_spanner_outer:first-child {
+#jwjmlrvreo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iershdfpfb .gt_column_spanner_outer:last-child {
+#jwjmlrvreo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iershdfpfb .gt_column_spanner {
+#jwjmlrvreo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -344,11 +348,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#iershdfpfb .gt_spanner_row {
+#jwjmlrvreo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iershdfpfb .gt_group_heading {
+#jwjmlrvreo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -374,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#iershdfpfb .gt_empty_group_heading {
+#jwjmlrvreo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -389,15 +393,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#iershdfpfb .gt_from_md > :first-child {
+#jwjmlrvreo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iershdfpfb .gt_from_md > :last-child {
+#jwjmlrvreo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iershdfpfb .gt_row {
+#jwjmlrvreo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -416,7 +420,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#iershdfpfb .gt_stub {
+#jwjmlrvreo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -429,7 +433,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iershdfpfb .gt_stub_row_group {
+#jwjmlrvreo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -443,15 +447,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#iershdfpfb .gt_row_group_first td {
+#jwjmlrvreo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iershdfpfb .gt_row_group_first th {
+#jwjmlrvreo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iershdfpfb .gt_summary_row {
+#jwjmlrvreo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -461,16 +465,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iershdfpfb .gt_first_summary_row {
+#jwjmlrvreo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iershdfpfb .gt_first_summary_row.thick {
+#jwjmlrvreo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iershdfpfb .gt_last_summary_row {
+#jwjmlrvreo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -480,7 +484,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#iershdfpfb .gt_grand_summary_row {
+#jwjmlrvreo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -490,7 +494,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iershdfpfb .gt_first_grand_summary_row {
+#jwjmlrvreo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -500,7 +504,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#iershdfpfb .gt_last_grand_summary_row_top {
+#jwjmlrvreo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -510,11 +514,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#iershdfpfb .gt_striped {
+#jwjmlrvreo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iershdfpfb .gt_table_body {
+#jwjmlrvreo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -523,7 +527,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#iershdfpfb .gt_footnotes {
+#jwjmlrvreo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -537,7 +541,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iershdfpfb .gt_footnote {
+#jwjmlrvreo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -546,7 +550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iershdfpfb .gt_sourcenotes {
+#jwjmlrvreo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -560,7 +564,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iershdfpfb .gt_sourcenote {
+#jwjmlrvreo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -568,72 +572,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iershdfpfb .gt_left {
+#jwjmlrvreo .gt_left {
   text-align: left;
 }
 
-#iershdfpfb .gt_center {
+#jwjmlrvreo .gt_center {
   text-align: center;
 }
 
-#iershdfpfb .gt_right {
+#jwjmlrvreo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iershdfpfb .gt_font_normal {
+#jwjmlrvreo .gt_font_normal {
   font-weight: normal;
 }
 
-#iershdfpfb .gt_font_bold {
+#jwjmlrvreo .gt_font_bold {
   font-weight: bold;
 }
 
-#iershdfpfb .gt_font_italic {
+#jwjmlrvreo .gt_font_italic {
   font-style: italic;
 }
 
-#iershdfpfb .gt_super {
+#jwjmlrvreo .gt_super {
   font-size: 65%;
 }
 
-#iershdfpfb .gt_footnote_marks {
+#jwjmlrvreo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iershdfpfb .gt_asterisk {
+#jwjmlrvreo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iershdfpfb .gt_indent_1 {
+#jwjmlrvreo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iershdfpfb .gt_indent_2 {
+#jwjmlrvreo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iershdfpfb .gt_indent_3 {
+#jwjmlrvreo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iershdfpfb .gt_indent_4 {
+#jwjmlrvreo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iershdfpfb .gt_indent_5 {
+#jwjmlrvreo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#iershdfpfb .katex-display {
+#jwjmlrvreo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#iershdfpfb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jwjmlrvreo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -684,15 +688,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="problem-2." class="level1">
 <h1>Problem 2.</h1>
-</section>
-<section id="problem-3." class="level1">
-<h1>Problem 3.</h1>
 <section id="a.-1" class="level2">
 <h2 class="anchored" data-anchor-id="a.-1">a.</h2>
-<p>The paper I chose for my critique uses a linear model, with nest abundance as the response variable and year as the predictor variable. <img src="git/ENVS-193DS_homework-03/images/turtlelinearmodel.png" class="img-fluid" alt="Linear model of leatherback turtle nesting data"></p>
+<p>An affective visualization for my personal data would likely include the psychological effects of caffeine, such as the energy rush and crash. It might also incorporate how days with more classes can be busier and hectic. Caffeine can definitely affect our emotions, and that should be the main component of an affective art piece.</p>
 </section>
 <section id="b.-1" class="level2">
 <h2 class="anchored" data-anchor-id="b.-1">b.</h2>
+</section>
+</section>
+<section id="problem-3." class="level1">
+<h1>Problem 3.</h1>
+<section id="a.-2" class="level2">
+<h2 class="anchored" data-anchor-id="a.-2">a.</h2>
+<p>The paper I chose for my critique uses a linear model, with nest abundance as the response variable and year as the predictor variable. <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2351989425000162-gr4_lrg.jpg" class="img-fluid" alt="Leatherback nesting model"></p>
+</section>
+<section id="b.-2" class="level2">
+<h2 class="anchored" data-anchor-id="b.-2">b.</h2>
+<p>The x- and y-axes are in logical positions, as time should be on the x-axis and the response variable to time should be on the y-axis. They display underlying data, showing the raw data on the graph and overlaying the line and confidence intervals. ‘Simple’ statistics, like means and standard errors, are not displayed, possibly due to their use of the global linear model and the natural log of nesting sites, rather than the raw number.</p>
+</section>
+<section id="c.-1" class="level2">
+<h2 class="anchored" data-anchor-id="c.-1">c.&nbsp;</h2>
+<p>The authors handled visual clutter well. They removed grid lines, chose a different color for the line, and made the axes labels clear and legible. ‘Year’ and ‘Ln(Nests)’ are bolded to draw attention to the timeframes, which are not the same for all four figures, and to the values, which have different scales.</p>
+</section>
+<section id="d.-1" class="level2">
+<h2 class="anchored" data-anchor-id="d.-1">d.</h2>
+<p>To improve this figure, adding the r-values that indicate the degree of nesting trends could be useful. While it appears that ‘Bluff’ and ‘Larga’ have falling trends, and ‘Soropta’ has a rising trend, it might be useful in certain situations to see statistics quickly without further reading. This is especially apparent when the natural log may distort the true change in nests. Another improvement could be to include the overarching trend in each figure. By overlaying the aggregate of the four Panamanian beaches, the trend for each individual beach can be compared with the others. Adding all four models onto one graph would not be ideal, as this would be too much visual clutter.</p>
 </section>
 </section>
 
