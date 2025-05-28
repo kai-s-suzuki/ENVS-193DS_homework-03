@@ -1,6 +1,7 @@
 ---
 title: "homework"
 format: html
+output-dir: code
 ---
 
 https://github.com/kai-s-suzuki/ENVS-193DS_homework-03
