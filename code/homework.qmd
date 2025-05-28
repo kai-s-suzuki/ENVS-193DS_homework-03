@@ -38,7 +38,8 @@ ggplot(data = mydata_clean, # using the clean dataset
        aes(x = Classes, # setting x axis as classes
            y = caffeine_mg, # setting y axis as caffeine in mg
            color = Classes, # coloring by classes, so 0/1/2 have their own colors
-           shape = Classes)) + # making sure 0/1/2 have their own shapes
+           shape = Classes, # making sure 0/1/2 have their own shapes
+          fill = Classes)) + 
   geom_boxplot() + # making boxplots
   geom_jitter(height = 0, # making sure the points don't move vertically
               width = 0.1) + # limiting how much the points move horizontally
@@ -47,7 +48,10 @@ ggplot(data = mydata_clean, # using the clean dataset
   scale_color_manual(values = c("0" = "darkgreen", # manually coloring 0, 1, and 2
                                 "1" = "tan3",
                                 "2" = "chocolate4")) +
-   scale_shape_manual(values = c("0" = 17, "1" = 18, "2" = 19)) # making data points different shapes
+   scale_shape_manual(values = c("0" = 17, "1" = 18, "2" = 19)) + # making data points different shapes
+  scale_fill_manual(values = c("0" = "#99b99d", 
+                               "1" = "#e9c76b", 
+                               "2" = "#c2a47e"))
 ```
 
 ```{r}
@@ -86,6 +90,12 @@ mydata_summary |> # starting with the mydata_summary data frame
 ```
 
 # Problem 2.
+
+## a.
+An affective visualization for my personal data would likely include the psychological effects of caffeine, such as the energy rush and crash. It might also incorporate how days with more classes can be busier and hectic. Caffeine can definitely affect our emotions, and that should be the main component of an affective art piece. 
+
+## b.
+
 
 # Problem 3.
 
