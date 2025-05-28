@@ -1,7 +1,6 @@
 ---
 title: "homework"
 format: html
-output-dir: code
 ---
 
 https://github.com/kai-s-suzuki/ENVS-193DS_homework-03
@@ -96,7 +95,9 @@ mydata_summary |> # starting with the mydata_summary data frame
 An affective visualization for my personal data would likely include the psychological effects of caffeine, such as the energy rush and crash. It might also incorporate how days with more classes can be busier and hectic. Caffeine can definitely affect our emotions, and that should be the main component of an affective art piece. 
 
 ## b.
-
+![Sketch of affective visualization](../images/sketchHW3.jpg)
+## c.
+![Sketch of affective visualization](../images/draftHW3.jpg)
 
 # Problem 3.
 
