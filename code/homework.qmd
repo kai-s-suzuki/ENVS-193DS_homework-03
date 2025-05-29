@@ -117,7 +117,9 @@ A sketch of the art was made with conceptual ideas before the draft. The origina
 
 ## a.
 
-The paper I chose for my critique uses a linear model, with nest abundance as the response variable and year as the predictor variable. ![Leatherback nesting model](https://ars.els-cdn.com/content/image/1-s2.0-S2351989425000162-gr4_lrg.jpg)
+The paper I chose for my critique uses a linear model, with nest abundance as the response variable and year as the predictor variable. 
+
+![Leatherback nesting model](https://ars.els-cdn.com/content/image/1-s2.0-S2351989425000162-gr4_lrg.jpg)
 
 ## b.
 
