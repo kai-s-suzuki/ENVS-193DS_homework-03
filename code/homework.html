@@ -9,7 +9,7 @@
 <meta name="author" content="Kai Suzuki">
 <meta name="dcterms.date" content="2025-05-28">
 
-<title>homework</title>
+<title>Homework 3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,15 +73,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#problem-1.-personal-data" id="toc-problem-1.-personal-data" class="nav-link active" data-scroll-target="#problem-1.-personal-data">Problem 1. Personal Data</a>
+  <ul>
+  <li><a href="#a." id="toc-a." class="nav-link" data-scroll-target="#a.">a.</a></li>
+  <li><a href="#b." id="toc-b." class="nav-link" data-scroll-target="#b.">b.</a></li>
+  <li><a href="#c." id="toc-c." class="nav-link" data-scroll-target="#c.">c.</a></li>
+  <li><a href="#d." id="toc-d." class="nav-link" data-scroll-target="#d.">d.</a></li>
+  </ul></li>
+  <li><a href="#problem-2.-affective-visualization" id="toc-problem-2.-affective-visualization" class="nav-link" data-scroll-target="#problem-2.-affective-visualization">Problem 2. Affective visualization</a>
+  <ul>
+  <li><a href="#a.-1" id="toc-a.-1" class="nav-link" data-scroll-target="#a.-1">a.</a></li>
+  <li><a href="#b.-1" id="toc-b.-1" class="nav-link" data-scroll-target="#b.-1">b.</a></li>
+  <li><a href="#c.-1" id="toc-c.-1" class="nav-link" data-scroll-target="#c.-1">c.</a></li>
+  <li><a href="#d.-1" id="toc-d.-1" class="nav-link" data-scroll-target="#d.-1">d.</a></li>
+  </ul></li>
+  <li><a href="#problem-3.-statistical-critique" id="toc-problem-3.-statistical-critique" class="nav-link" data-scroll-target="#problem-3.-statistical-critique">Problem 3. Statistical critique</a>
+  <ul>
+  <li><a href="#a.-2" id="toc-a.-2" class="nav-link" data-scroll-target="#a.-2">a.</a></li>
+  <li><a href="#b.-2" id="toc-b.-2" class="nav-link" data-scroll-target="#b.-2">b.</a></li>
+  <li><a href="#c.-2" id="toc-c.-2" class="nav-link" data-scroll-target="#c.-2">c.</a></li>
+  <li><a href="#d.-2" id="toc-d.-2" class="nav-link" data-scroll-target="#d.-2">d.</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">homework</h1>
+<h1 class="title">Homework 3</h1>
 </div>
 
 
@@ -110,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>https://github.com/kai-s-suzuki/ENVS-193DS_homework-03</p>
+<p><a href="https://github.com/kai-s-suzuki/ENVS-193DS_homework-03">Link to Repository</a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
@@ -124,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Problem 1. Personal Data</h1>
 <section id="a." class="level2">
 <h2 class="anchored" data-anchor-id="a.">a.</h2>
-<p>I could calculate the mean caffeine consumed (mg) each day to compare how much caffeine is consumed between days with 0, 1, and 2 classes. Since I feel like I get more work done on days without classes and I have less commitments to prevent me from preparing or buying a caffeinated drink, it would make sense to compare means.</p>
+<p>I could calculate the median caffeine consumed (mg) each day to compare how much caffeine is consumed between days with 0, 1, and 2 classes; the mean is not preferred due to the small sample size (approximately 10 per category). Since I feel like I get more work done on days without classes and I have less commitments to prevent me from preparing or buying a caffeinated drink, it would make sense to compare medians.</p>
 </section>
 <section id="b." class="level2">
 <h2 class="anchored" data-anchor-id="b.">b.</h2>
@@ -168,61 +196,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mydata_summary <span class="ot">&lt;-</span> mydata_clean <span class="sc">|&gt;</span> <span class="co"># starting with the clean data frame</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Classes) <span class="sc">|&gt;</span> <span class="co"># grouping by Classes</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(caffeine_mg), <span class="co"># calculating the mean</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">length</span>(caffeine_mg), <span class="co"># counting the number of observations</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">df =</span> n <span class="sc">-</span> <span class="dv">1</span>, <span class="co"># calculating the degrees of freedom</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(caffeine_mg), <span class="co"># calculating the sd </span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">se =</span> sd<span class="sc">/</span><span class="fu">sqrt</span>(n), <span class="co"># calculating the se</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">tval =</span> <span class="fu">qt</span>(<span class="at">p =</span> <span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> df, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>), <span class="co"># calculating the t-value</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci_lower =</span> mean <span class="sc">-</span> tval<span class="sc">*</span>se, <span class="co"># calculate the lower bound of the 95% CI</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci_higher =</span> mean <span class="sc">+</span> tval<span class="sc">*</span>se <span class="co"># calculate the upper bound of the 95% CI) </span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            )</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>mydata_summary <span class="co"># displaying the data table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 9
-  Classes  mean     n    df    sd    se  tval ci_lower ci_higher
-  &lt;fct&gt;   &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-1 0       102.     12    11  86.3  24.9  2.20     47.2      157.
-2 1        60      11    10  65.6  19.8  2.23     15.9      104.
-3 2        58.6    11    10  64.3  19.4  2.23     15.5      102.</code></pre>
-</div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">median =</span> <span class="fu">median</span>(caffeine_mg), <span class="co"># calculating the median</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">length</span>(caffeine_mg), <span class="co"># counting the number of observations</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">df =</span> n <span class="sc">-</span> <span class="dv">1</span>, <span class="co"># calculating the degrees of freedom</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(caffeine_mg), <span class="co"># calculating the sd </span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">se =</span> sd<span class="sc">/</span><span class="fu">sqrt</span>(n), <span class="co"># calculating the se</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">tval =</span> <span class="fu">qt</span>(<span class="at">p =</span> <span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> df, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>), <span class="co"># calculating the t-value</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci_lower =</span> mean <span class="sc">-</span> tval<span class="sc">*</span>se, <span class="co"># calculate the lower bound of the 95% CI</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci_higher =</span> mean <span class="sc">+</span> tval<span class="sc">*</span>se, <span class="co"># calculate the upper bound of the 95% CI) </span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="c." class="level2">
 <h2 class="anchored" data-anchor-id="c.">c.</h2>
-<p>Caption: Caffeine consumption in mg is displayed by the number of classes attended each day. Days with zero classes had the highest mean caffeine consumption of about 102.1, while days with 1 or 2 classes had lower means of 60.0 and 58.6, respectively.</p>
+<p>Caption: Figure 1. “Caffeine consumption (mg) is highest on days with zero classes.” ‘Zero classes’ is shown in green, with the highest maximum and median. ‘One class’ is shown in yellow, with the lowest maximum and the equal-lowest median. ‘Two classes’ is shown in brown, with the second highest maximum and the equal-lowest median.</p>
 </section>
 <section id="d." class="level2">
 <h2 class="anchored" data-anchor-id="d.">d.</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mydata_summary <span class="sc">|&gt;</span> <span class="co"># starting with the mydata_summary data frame</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Classes, mean, sd, se, ci_lower, ci_higher) <span class="sc">|&gt;</span> <span class="co"># selecting only Classes, mean, sd, se, ci_lower, and ci_higher to be displayed</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> <span class="co"># using gt to make a table</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(<span class="st">"ci_lower"</span> <span class="ot">=</span> <span class="st">"Lower Bound"</span>, <span class="co"># relabeling ci_lower to say Lower Bound</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"ci_higher"</span> <span class="ot">=</span> <span class="st">"Upper Bound"</span>, <span class="co"># relabeling ci_higher to say Upper Bound</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"mean"</span> <span class="ot">=</span> <span class="st">"Mean"</span>, <span class="co"># relabeling mean to say Mean</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"sd"</span> <span class="ot">=</span> <span class="st">"Standard Deviation"</span>, <span class="co"># relabeling sd to say Standard Deviation</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"se"</span> <span class="ot">=</span> <span class="st">"Standard Error"</span>) <span class="sc">|&gt;</span> <span class="co"># relabeling se to say Standard Error</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>( <span class="co"># formatting numbers</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">everything</span>(), <span class="co"># applying to all columns</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span>) <span class="co"># rounding to one decimal place</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mydata_summary <span class="sc">|&gt;</span> <span class="co"># starting with the mydata_summary data frame</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Classes, median, sd, se, ci_lower, ci_higher) <span class="sc">|&gt;</span> <span class="co"># selecting only Classes, mean, sd, se, ci_lower, and ci_higher to be displayed</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> <span class="co"># using gt to make a table</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(<span class="st">"ci_lower"</span> <span class="ot">=</span> <span class="st">"Lower Bound"</span>, <span class="co"># relabeling ci_lower to say Lower Bound</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"ci_higher"</span> <span class="ot">=</span> <span class="st">"Upper Bound"</span>, <span class="co"># relabeling ci_higher to say Upper Bound</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"median"</span> <span class="ot">=</span> <span class="st">"Median"</span>, <span class="co"># relabeling median to say Median</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"sd"</span> <span class="ot">=</span> <span class="st">"Standard Deviation"</span>, <span class="co"># relabeling sd to say Standard Deviation</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"se"</span> <span class="ot">=</span> <span class="st">"Standard Error"</span>) <span class="sc">|&gt;</span> <span class="co"># relabeling se to say Standard Error</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>( <span class="co"># formatting numbers</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">everything</span>(), <span class="co"># applying to all columns</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span>) <span class="co"># rounding to one decimal place</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="spxzrnpame" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#spxzrnpame table {
+<div id="bqbticikbp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bqbticikbp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#spxzrnpame thead, #spxzrnpame tbody, #spxzrnpame tfoot, #spxzrnpame tr, #spxzrnpame td, #spxzrnpame th {
+#bqbticikbp thead, #bqbticikbp tbody, #bqbticikbp tfoot, #bqbticikbp tr, #bqbticikbp td, #bqbticikbp th {
   border-style: none;
 }
 
-#spxzrnpame p {
+#bqbticikbp p {
   margin: 0;
   padding: 0;
 }
 
-#spxzrnpame .gt_table {
+#bqbticikbp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -248,12 +268,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#spxzrnpame .gt_caption {
+#bqbticikbp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#spxzrnpame .gt_title {
+#bqbticikbp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -265,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#spxzrnpame .gt_subtitle {
+#bqbticikbp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -277,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#spxzrnpame .gt_heading {
+#bqbticikbp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -289,13 +309,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#spxzrnpame .gt_bottom_border {
+#bqbticikbp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#spxzrnpame .gt_col_headings {
+#bqbticikbp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -310,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#spxzrnpame .gt_col_heading {
+#bqbticikbp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -330,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#spxzrnpame .gt_column_spanner_outer {
+#bqbticikbp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -342,15 +362,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#spxzrnpame .gt_column_spanner_outer:first-child {
+#bqbticikbp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#spxzrnpame .gt_column_spanner_outer:last-child {
+#bqbticikbp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#spxzrnpame .gt_column_spanner {
+#bqbticikbp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -362,11 +382,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#spxzrnpame .gt_spanner_row {
+#bqbticikbp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#spxzrnpame .gt_group_heading {
+#bqbticikbp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -392,7 +412,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#spxzrnpame .gt_empty_group_heading {
+#bqbticikbp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -407,15 +427,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#spxzrnpame .gt_from_md > :first-child {
+#bqbticikbp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#spxzrnpame .gt_from_md > :last-child {
+#bqbticikbp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#spxzrnpame .gt_row {
+#bqbticikbp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -434,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#spxzrnpame .gt_stub {
+#bqbticikbp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -447,7 +467,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#spxzrnpame .gt_stub_row_group {
+#bqbticikbp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -461,15 +481,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#spxzrnpame .gt_row_group_first td {
+#bqbticikbp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#spxzrnpame .gt_row_group_first th {
+#bqbticikbp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#spxzrnpame .gt_summary_row {
+#bqbticikbp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -479,16 +499,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#spxzrnpame .gt_first_summary_row {
+#bqbticikbp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#spxzrnpame .gt_first_summary_row.thick {
+#bqbticikbp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#spxzrnpame .gt_last_summary_row {
+#bqbticikbp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -498,7 +518,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#spxzrnpame .gt_grand_summary_row {
+#bqbticikbp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -508,7 +528,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#spxzrnpame .gt_first_grand_summary_row {
+#bqbticikbp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -518,7 +538,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#spxzrnpame .gt_last_grand_summary_row_top {
+#bqbticikbp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -528,11 +548,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#spxzrnpame .gt_striped {
+#bqbticikbp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#spxzrnpame .gt_table_body {
+#bqbticikbp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -541,7 +561,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#spxzrnpame .gt_footnotes {
+#bqbticikbp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -555,7 +575,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#spxzrnpame .gt_footnote {
+#bqbticikbp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -564,7 +584,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#spxzrnpame .gt_sourcenotes {
+#bqbticikbp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -578,7 +598,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#spxzrnpame .gt_sourcenote {
+#bqbticikbp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -586,72 +606,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#spxzrnpame .gt_left {
+#bqbticikbp .gt_left {
   text-align: left;
 }
 
-#spxzrnpame .gt_center {
+#bqbticikbp .gt_center {
   text-align: center;
 }
 
-#spxzrnpame .gt_right {
+#bqbticikbp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#spxzrnpame .gt_font_normal {
+#bqbticikbp .gt_font_normal {
   font-weight: normal;
 }
 
-#spxzrnpame .gt_font_bold {
+#bqbticikbp .gt_font_bold {
   font-weight: bold;
 }
 
-#spxzrnpame .gt_font_italic {
+#bqbticikbp .gt_font_italic {
   font-style: italic;
 }
 
-#spxzrnpame .gt_super {
+#bqbticikbp .gt_super {
   font-size: 65%;
 }
 
-#spxzrnpame .gt_footnote_marks {
+#bqbticikbp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#spxzrnpame .gt_asterisk {
+#bqbticikbp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#spxzrnpame .gt_indent_1 {
+#bqbticikbp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#spxzrnpame .gt_indent_2 {
+#bqbticikbp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#spxzrnpame .gt_indent_3 {
+#bqbticikbp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#spxzrnpame .gt_indent_4 {
+#bqbticikbp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#spxzrnpame .gt_indent_5 {
+#bqbticikbp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#spxzrnpame .katex-display {
+#bqbticikbp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#spxzrnpame div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bqbticikbp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -660,7 +680,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="gt_col_headings header">
 <th id="Classes" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Classes</th>
-<th id="mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Mean</th>
+<th id="median" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Median</th>
 <th id="sd" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Standard Deviation</th>
 <th id="se" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Standard Error</th>
 <th id="ci_lower" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Lower Bound</th>
@@ -670,7 +690,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_center" headers="Classes">0</td>
-<td class="gt_row gt_right" headers="mean">102.1</td>
+<td class="gt_row gt_right" headers="median">105.0</td>
 <td class="gt_row gt_right" headers="sd">86.3</td>
 <td class="gt_row gt_right" headers="se">24.9</td>
 <td class="gt_row gt_right" headers="ci_lower">47.2</td>
@@ -678,7 +698,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td class="gt_row gt_center" headers="Classes">1</td>
-<td class="gt_row gt_right" headers="mean">60.0</td>
+<td class="gt_row gt_right" headers="median">40.0</td>
 <td class="gt_row gt_right" headers="sd">65.6</td>
 <td class="gt_row gt_right" headers="se">19.8</td>
 <td class="gt_row gt_right" headers="ci_lower">15.9</td>
@@ -686,7 +706,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td class="gt_row gt_center" headers="Classes">2</td>
-<td class="gt_row gt_right" headers="mean">58.6</td>
+<td class="gt_row gt_right" headers="median">40.0</td>
 <td class="gt_row gt_right" headers="sd">64.3</td>
 <td class="gt_row gt_right" headers="se">19.4</td>
 <td class="gt_row gt_right" headers="ci_lower">15.5</td>
@@ -700,11 +720,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="problem-2." class="level1">
-<h1>Problem 2.</h1>
+<section id="problem-2.-affective-visualization" class="level1">
+<h1>Problem 2. Affective visualization</h1>
 <section id="a.-1" class="level2">
 <h2 class="anchored" data-anchor-id="a.-1">a.</h2>
-<p>An affective visualization for my personal data would likely include the psychological effects of caffeine, such as the energy rush and crash. It might also incorporate how days with more classes can be busier and hectic. Caffeine can definitely affect our emotions, and that should be the main component of an affective art piece.</p>
+<p>An affective visualization for my personal data would likely include the psychological effects of caffeine, such as the energy rush and crash. It might also incorporate how days with more classes can be busier and hectic. Caffeine can definitely affect our emotions, and that should be the main component of an affective art piece. The piece will use watercolor from common sources of caffeine.</p>
 </section>
 <section id="b.-1" class="level2">
 <h2 class="anchored" data-anchor-id="b.-1">b.</h2>
@@ -732,8 +752,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A sketch of the art was made with conceptual ideas before the draft. The original data visualization serves as a base where the increasing y-axis was reflected in the art.</p>
 </section>
 </section>
-<section id="problem-3." class="level1">
-<h1>Problem 3.</h1>
+<section id="problem-3.-statistical-critique" class="level1">
+<h1>Problem 3. Statistical critique</h1>
 <section id="a.-2" class="level2">
 <h2 class="anchored" data-anchor-id="a.-2">a.</h2>
 <p>The paper I chose for my critique uses a linear model, with nest abundance as the response variable and year as the predictor variable.</p>

@@ -1,11 +1,14 @@
 ---
-title: "homework"
+title: "Homework 3"
 author: "Kai Suzuki"
 date: "2025-05-28"
-format: html
+format: 
+  html:
+    toc: true
+    toc-depth: 12
 ---
 
-https://github.com/kai-s-suzuki/ENVS-193DS_homework-03
+[Link to Repository](https://github.com/kai-s-suzuki/ENVS-193DS_homework-03)
 
 ```{r setup, message=FALSE}
 library(tidyverse)
@@ -21,7 +24,7 @@ mydata <- read_csv("../data/ENVS-193DS_caffeine_hw2.csv")
 
 ## a.
 
-I could calculate the mean caffeine consumed (mg) each day to compare how much caffeine is consumed between days with 0, 1, and 2 classes. Since I feel like I get more work done on days without classes and I have less commitments to prevent me from preparing or buying a caffeinated drink, it would make sense to compare means.
+I could calculate the median caffeine consumed (mg) each day to compare how much caffeine is consumed between days with 0, 1, and 2 classes; the mean is not preferred due to the small sample size (approximately 10 per category). Since I feel like I get more work done on days without classes and I have less commitments to prevent me from preparing or buying a caffeinated drink, it would make sense to compare medians.
 
 ## b.
 
@@ -60,30 +63,30 @@ ggplot(data = mydata_clean, # using the clean dataset
 mydata_summary <- mydata_clean |> # starting with the clean data frame
 group_by(Classes) |> # grouping by Classes
   summarize(mean = mean(caffeine_mg), # calculating the mean
+            median = median(caffeine_mg), # calculating the median
             n = length(caffeine_mg), # counting the number of observations
             df = n - 1, # calculating the degrees of freedom
             sd = sd(caffeine_mg), # calculating the sd 
             se = sd/sqrt(n), # calculating the se
             tval = qt(p = 0.05/2, df = df, lower.tail = FALSE), # calculating the t-value
             ci_lower = mean - tval*se, # calculate the lower bound of the 95% CI
-            ci_higher = mean + tval*se # calculate the upper bound of the 95% CI) 
+            ci_higher = mean + tval*se, # calculate the upper bound of the 95% CI) 
             )
-mydata_summary # displaying the data table
 ```
 
 ## c.
 
-Caption: Caffeine consumption in mg is displayed by the number of classes attended each day. Days with zero classes had the highest mean caffeine consumption of about 102.1, while days with 1 or 2 classes had lower means of 60.0 and 58.6, respectively.
+Caption: Figure 1. "Caffeine consumption (mg) is highest on days with zero classes." 'Zero classes' is shown in green, with the highest maximum and median. 'One class' is shown in yellow, with the lowest maximum and the equal-lowest median. 'Two classes' is shown in brown, with the second highest maximum and the equal-lowest median. 
 
 ## d.
 
 ```{r}
 mydata_summary |> # starting with the mydata_summary data frame
-  select(Classes, mean, sd, se, ci_lower, ci_higher) |> # selecting only Classes, mean, sd, se, ci_lower, and ci_higher to be displayed
+  select(Classes, median, sd, se, ci_lower, ci_higher) |> # selecting only Classes, mean, sd, se, ci_lower, and ci_higher to be displayed
   gt() |> # using gt to make a table
   gt::cols_label("ci_lower" = "Lower Bound", # relabeling ci_lower to say Lower Bound
                  "ci_higher" = "Upper Bound", # relabeling ci_higher to say Upper Bound
-                 "mean" = "Mean", # relabeling mean to say Mean
+                 "median" = "Median", # relabeling median to say Median
                  "sd" = "Standard Deviation", # relabeling sd to say Standard Deviation
                  "se" = "Standard Error") |> # relabeling se to say Standard Error
   fmt_number( # formatting numbers
@@ -91,11 +94,11 @@ mydata_summary |> # starting with the mydata_summary data frame
     decimals = 1) # rounding to one decimal place
 ```
 
-# Problem 2.
+# Problem 2. Affective visualization
 
 ## a.
 
-An affective visualization for my personal data would likely include the psychological effects of caffeine, such as the energy rush and crash. It might also incorporate how days with more classes can be busier and hectic. Caffeine can definitely affect our emotions, and that should be the main component of an affective art piece.
+An affective visualization for my personal data would likely include the psychological effects of caffeine, such as the energy rush and crash. It might also incorporate how days with more classes can be busier and hectic. Caffeine can definitely affect our emotions, and that should be the main component of an affective art piece. The piece will use watercolor from common sources of caffeine. 
 
 ## b.
 
@@ -115,7 +118,7 @@ This piece was made with natural pigments (instant coffee, matcha powder, black 
 
 A sketch of the art was made with conceptual ideas before the draft. The original data visualization serves as a base where the increasing y-axis was reflected in the art.
 
-# Problem 3.
+# Problem 3. Statistical critique
 
 ## a.
 
